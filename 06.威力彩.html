@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HW powerball</title>
+</head>
+
+<body>
+  <script>
+    const rand = (min, max) => {
+      return Math.round(Math.random() * (max - min)) + min
+    }
+    let firstSec = []
+    let num = 0
+    while (firstSec.length < 6) {
+      num = rand(1, 38)
+      if (firstSec.includes(num)) continue
+      firstSec.push(num)
+    }
+    firstSec.sort((a, b) => { return a - b })
+    document.write(firstSec + '<br>' + rand(1, 8))
+  </script>
+</body>
+
+</html>
